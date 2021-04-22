@@ -49,10 +49,12 @@ class APIClient {
     }
     
     func clip(
-        playbackId: String,
+        assetId: String,
+        startTime: Float?,
+        endTime: Float?,
         onSuccess successHandler: @escaping ((_: APIGetClipSuccessResponse) -> Void),
         onFailure failureHandler: @escaping ((_: APIRequest.ErrorResponse?, _: Error) -> Void)) {
-        APIClipRequest(playbackId: playbackId, startTime: 1.0, endTime: 10.0)
+        APIClipRequest(assetId: assetId, startTime: startTime, endTime: endTime)
             .dispatch(
                 onSuccess: { (successResponse) in
                     NSLog("\(successResponse.id)")
@@ -70,9 +72,9 @@ class APIClient {
 //MARK: POST /api/clips
 
 struct APIClipRequest: Codable {
-    let playbackId: String
-    let startTime: Float
-    let endTime: Float
+    let assetId: String
+    let startTime: Float?
+    let endTime: Float?
 }
 
 struct APIClipSuccessResponse: Codable {

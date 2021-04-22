@@ -69,17 +69,6 @@
                                     <constraint firstAttribute="height" constant="210" id="5hU-uU-0Ld"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3o-g0-et0">
-                                <rect key="frame" x="189" y="752" width="36" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="2sk-NR-wNX"/>
-                                    <constraint firstAttribute="width" constant="36" id="zZ8-Vw-R4P"/>
-                                </constraints>
-                                <state key="normal" title="Play"/>
-                                <connections>
-                                    <action selector="didPressPlay:" destination="goX-FZ-xfE" eventType="touchUpInside" id="7bZ-U6-XXc"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rHX-l6-jQZ" customClass="TrimmerView" customModule="PryntTrimmerView">
                                 <rect key="frame" x="20" y="550" width="374" height="128"/>
                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
@@ -99,14 +88,11 @@
                         <constraints>
                             <constraint firstItem="H82-eZ-dIa" firstAttribute="centerY" secondItem="Zpa-vR-orC" secondAttribute="centerY" id="GgT-LG-Lhz"/>
                             <constraint firstItem="rHX-l6-jQZ" firstAttribute="top" secondItem="H82-eZ-dIa" secondAttribute="bottom" constant="41" id="KZQ-Nu-sfg"/>
-                            <constraint firstItem="q3o-g0-et0" firstAttribute="centerX" secondItem="Zpa-vR-orC" secondAttribute="centerX" id="Wet-o1-4fn"/>
                             <constraint firstItem="rHX-l6-jQZ" firstAttribute="centerX" secondItem="Zpa-vR-orC" secondAttribute="centerX" id="j6H-Xz-zSF"/>
-                            <constraint firstItem="Zpa-vR-orC" firstAttribute="bottom" secondItem="q3o-g0-et0" secondAttribute="bottom" constant="20" id="pft-za-xVg"/>
                             <constraint firstItem="H82-eZ-dIa" firstAttribute="centerX" secondItem="Zpa-vR-orC" secondAttribute="centerX" id="ttC-1h-Zq7"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="playButton" destination="q3o-g0-et0" id="5UC-TL-3WD"/>
                         <outlet property="playerView" destination="H82-eZ-dIa" id="EFT-bR-g30"/>
                         <outlet property="trimmerView" destination="rHX-l6-jQZ" id="xhQ-fY-JTm"/>
                     </connections>

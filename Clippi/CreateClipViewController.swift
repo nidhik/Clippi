@@ -13,7 +13,6 @@ import PryntTrimmerView
 // view controller in the storyboard
 class CreateClipViewController: UIViewController {
 
-    @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var playerView: UIView!
     @IBOutlet weak var trimmerView: TrimmerView!
 
@@ -21,7 +20,7 @@ class CreateClipViewController: UIViewController {
     var playbackTimeCheckerTimer: Timer?
     var trimmerPositionChangedTimer: Timer?
     
-    let sourcePlaybackId = "sm5tO01IBu8zx57KM3m2QYiEkHUb46j00Xf8c7QpQ4U8A"
+    let sourceAssetId = "MwaErgfmNR3OfzzuxBIXDfaSqE5HJkBUQYCnI902Ee5g"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +29,6 @@ class CreateClipViewController: UIViewController {
         loadAsset()
     }
 
-    @IBAction func didPressPlay(_ sender: Any) {
-        play()
-    }
     func play() {
 
         guard let player = player else { return }
@@ -51,7 +47,7 @@ class CreateClipViewController: UIViewController {
     }
 
     func loadAsset() {
-        APIClient().clip(playbackId: sourcePlaybackId) { [self] (successResponse) in
+        APIClient().clip(assetId: sourceAssetId, startTime: nil, endTime: nil) { [self] (successResponse) in
             NSLog("Download: https://stream.mux.com/\(successResponse.data.playbackId)/low.mp4")
             let mp4 = "https://stream.mux.com/\(successResponse.data.playbackId)/low.mp4"
             let asset = AVAsset(url: URL(string: mp4)!)
@@ -79,6 +75,7 @@ class CreateClipViewController: UIViewController {
         layer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         playerView.layer.sublayers?.forEach({$0.removeFromSuperlayer()})
         playerView.layer.addSublayer(layer)
+        play()
     }
 
     @objc func itemDidFinishPlaying(_ notification: Notification) {
