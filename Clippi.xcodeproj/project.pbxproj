@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		028885692630F39B00777D6B /* ClippiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028885682630F39B00777D6B /* ClippiTests.swift */; };
 		028885742630F39B00777D6B /* ClippiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028885732630F39B00777D6B /* ClippiUITests.swift */; };
 		028885862631030800777D6B /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028885852631030800777D6B /* PlayerView.swift */; };
+		0288858C263106F900777D6B /* PryntTrimmerView in Frameworks */ = {isa = PBXBuildFile; productRef = 0288858B263106F900777D6B /* PryntTrimmerView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0288858C263106F900777D6B /* PryntTrimmerView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +149,9 @@
 			dependencies = (
 			);
 			name = Clippi;
+			packageProductDependencies = (
+				0288858B263106F900777D6B /* PryntTrimmerView */,
+			);
 			productName = Clippi;
 			productReference = 0288854E2630F39A00777D6B /* Clippi.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +223,9 @@
 				Base,
 			);
 			mainGroup = 028885452630F39A00777D6B;
+			packageReferences = (
+				0288858A263106F800777D6B /* XCRemoteSwiftPackageReference "PryntTrimmerView" */,
+			);
 			productRefGroup = 0288854F2630F39A00777D6B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -597,6 +605,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0288858A263106F800777D6B /* XCRemoteSwiftPackageReference "PryntTrimmerView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/HHK1/PryntTrimmerView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0288858B263106F900777D6B /* PryntTrimmerView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0288858A263106F800777D6B /* XCRemoteSwiftPackageReference "PryntTrimmerView" */;
+			productName = PryntTrimmerView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 028885462630F39A00777D6B /* Project object */;
 }
