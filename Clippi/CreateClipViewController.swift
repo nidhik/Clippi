@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 import PryntTrimmerView
+import PhotosUI
 
 /// A view controller to demonstrate the trimming of a video. Make sure the scene is selected as the initial
 // view controller in the storyboard
@@ -19,7 +20,7 @@ class CreateClipViewController: UIViewController {
     var player: AVPlayer?
     var playbackTimeCheckerTimer: Timer?
     var trimmerPositionChangedTimer: Timer?
-    let sourceAssetId = "MwaErgfmNR3OfzzuxBIXDfaSqE5HJkBUQYCnI902Ee5g"
+    let sourceAssetId = "U4RQ8cgj8zeL00VsacQe7lLCEyYkXIPHn1AMEWSdT6bo"
     var clipAssetId: String?
 
     override func viewDidLoad() {
@@ -39,14 +40,40 @@ class CreateClipViewController: UIViewController {
             return
         }
         NSLog("Trim from \(CMTimeGetSeconds(startTime)) to \(CMTimeGetSeconds(endTime))")
-        APIClient().clip(assetId: assetId, startTime: Float(CMTimeGetSeconds(startTime)), endTime:  Float(CMTimeGetSeconds(endTime))) { (successResponse) in
-            NSLog("SHAREME: https://stream.mux.com/\(successResponse.data.playbackId).m3u8")
-            let items = [URL(string: "https://stream.mux.com/\(successResponse.data.playbackId).m3u8")!]
-            let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
-            self.present(ac, animated: true)
-        } onFailure: { (errorReponse, error) in
-            NSLog("Failed to trim clip \(error)")
+        
+        DispatchQueue.global(qos: .background).async {
+            if let url = (self.trimmerView.asset as? AVURLAsset)?.url,
+                let urlData = NSData(contentsOf: url) {
+                let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0];
+                let filePath="\(documentsPath)/tempFile.mp4"
+                DispatchQueue.main.async {
+                    urlData.write(toFile: filePath, atomically: true)
+                    PHPhotoLibrary.shared().performChanges({
+                        PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: URL(fileURLWithPath: filePath))
+                    }) { completed, error in
+                        if completed {
+                            print("Video is saved!")
+                            DispatchQueue.main.async {
+                                let items = [URL(fileURLWithPath: filePath)]
+                                let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+                                self.present(ac, animated: true)
+                            }
+                        }
+                    }
+                }
+            }
         }
+        
+        
+//        APIClient().clip(assetId: assetId, startTime: Float(CMTimeGetSeconds(startTime)), endTime:  Float(CMTimeGetSeconds(endTime))) { (successResponse) in
+//            NSLog("SHAREME: https://stream.mux.com/\(successResponse.data.playbackId).m3u8")
+//            let mp4 = "https://stream.mux.com/\(successResponse.data.playbackId)/low.mp4"
+//
+//
+//
+//        } onFailure: { (errorReponse, error) in
+//            NSLog("Failed to trim clip \(error)")
+//        }
     }
     
     func play() {
