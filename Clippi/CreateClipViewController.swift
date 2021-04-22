@@ -26,6 +26,7 @@ class CreateClipViewController: UIViewController {
         super.viewDidLoad()
         trimmerView.handleColor = UIColor.orange
         trimmerView.mainColor = UIColor.purple
+        trimmerView.minDuration = 5.0
         loadAsset()
     }
 
@@ -40,6 +41,9 @@ class CreateClipViewController: UIViewController {
         NSLog("Trim from \(CMTimeGetSeconds(startTime)) to \(CMTimeGetSeconds(endTime))")
         APIClient().clip(assetId: assetId, startTime: Float(CMTimeGetSeconds(startTime)), endTime:  Float(CMTimeGetSeconds(endTime))) { (successResponse) in
             NSLog("SHAREME: https://stream.mux.com/\(successResponse.data.playbackId).m3u8")
+            let items = [URL(string: "https://stream.mux.com/\(successResponse.data.playbackId).m3u8")!]
+            let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+            self.present(ac, animated: true)
         } onFailure: { (errorReponse, error) in
             NSLog("Failed to trim clip \(error)")
         }
