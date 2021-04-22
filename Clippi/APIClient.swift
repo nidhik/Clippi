@@ -13,13 +13,17 @@ import Foundation
 typealias Cancel = () -> Void
 
 class APIClient {
-    func pollForClip(assetId: String, duration: TimeInterval) -> Cancel{
+    func pollForClip(
+        assetId: String,
+        duration: TimeInterval,
+        onSuccess successHandler: @escaping ((_: APIGetClipSuccessResponse) -> Void),
+        onFailure failureHandler: @escaping ((_: APIRequest.ErrorResponse?, _: Error) -> Void)) -> Cancel{
         let timer = DispatchSource.makeTimerSource(queue: DispatchQueue.main)
         timer.schedule(deadline: .now(), repeating: .milliseconds(Int(duration * 1000)), leeway: .milliseconds(10))
         timer.setEventHandler(handler: {
             self.getClip(assetId: assetId, cancel: {
                 timer.cancel()
-            })
+            }, onSuccess: successHandler, onFailure: failureHandler)
         })
         timer.resume()
         return {
@@ -27,33 +31,39 @@ class APIClient {
         }
     }
 
-    func getClip(assetId: String, cancel: @escaping Cancel) {
+    func getClip(
+        assetId: String,
+        cancel: @escaping Cancel,
+        onSuccess successHandler: @escaping ((_: APIGetClipSuccessResponse) -> Void),
+        onFailure failureHandler: @escaping ((_: APIRequest.ErrorResponse?, _: Error) -> Void)) {
         return APIGetClipRequest(assetId: assetId)
             .dispatch(
                 onSuccess: { (successResponse) in
-                    NSLog("https://stream.mux.com/\(successResponse.data.playbackId).m3u8")
-                    NSLog("https://stream.mux.com/\(successResponse.data.playbackId)/low.mp4")
                     cancel()
+                    successHandler(successResponse)
             },
                 onFailure: { (errorResponse, error) in
                  NSLog("Error getting clip \(error)")
+                failureHandler(errorResponse, error)
             })
     }
-
-    func clip(playbackId: String) {
+    
+    func clip(
+        playbackId: String,
+        onSuccess successHandler: @escaping ((_: APIGetClipSuccessResponse) -> Void),
+        onFailure failureHandler: @escaping ((_: APIRequest.ErrorResponse?, _: Error) -> Void)) {
         APIClipRequest(playbackId: playbackId, startTime: 1.0, endTime: 10.0)
             .dispatch(
                 onSuccess: { (successResponse) in
                     NSLog("\(successResponse.id)")
-                    _ = self.pollForClip(assetId: successResponse.id, duration: 2.0)
+                    _ = self.pollForClip(assetId: successResponse.id, duration: 2.0, onSuccess: successHandler, onFailure: failureHandler)
                     
             },
-                onFailure: { (errorResponse, error) in
-                 NSLog("Error making clip \(error)")
-            })
+            onFailure: failureHandler)
     }
     
 }
+
 
 // Note: pattern from https://medium.com/swift2go/minimal-swift-api-client-9ea1c9c7946
  

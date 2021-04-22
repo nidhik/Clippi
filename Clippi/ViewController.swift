@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     
 
     @IBAction func didPressClip(_ sender: Any) {
-        APIClient().clip(playbackId: sourcePlaybackId)
+       
     }
 }
 

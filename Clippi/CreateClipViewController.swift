@@ -20,6 +20,8 @@ class CreateClipViewController: UIViewController {
     var player: AVPlayer?
     var playbackTimeCheckerTimer: Timer?
     var trimmerPositionChangedTimer: Timer?
+    
+    let sourcePlaybackId = "sm5tO01IBu8zx57KM3m2QYiEkHUb46j00Xf8c7QpQ4U8A"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,10 +51,19 @@ class CreateClipViewController: UIViewController {
     }
 
     func loadAsset() {
-        let asset = AVAsset(url: URL(string: "https://stream.mux.com/ZL021bHLGnP6lMfEBaNetS9Ubs3WIqshe6QdrMnml94U/low.mp4")!)
-        trimmerView.asset = asset
-        trimmerView.delegate = self
-        addVideoPlayer(with: asset, playerView: playerView)
+        APIClient().clip(playbackId: sourcePlaybackId) { [self] (successResponse) in
+            NSLog("Download: https://stream.mux.com/\(successResponse.data.playbackId)/low.mp4")
+            let mp4 = "https://stream.mux.com/\(successResponse.data.playbackId)/low.mp4"
+            let asset = AVAsset(url: URL(string: mp4)!)
+            self.trimmerView.asset = asset
+            self.trimmerView.delegate = self
+            self.addVideoPlayer(with: asset, playerView: self.playerView)
+            
+        } onFailure: { (errorReponse, error) in
+            NSLog("Failed to make 30 clip \(error)")
+        }
+
+        
     }
 
     private func addVideoPlayer(with asset: AVAsset, playerView: UIView) {

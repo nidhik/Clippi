@@ -115,13 +115,13 @@
 				028885532630F39A00777D6B /* SceneDelegate.swift */,
 				02A9396D263135E90005CAC7 /* APIRequest.swift */,
 				02A939632631335E0005CAC7 /* APIClient.swift */,
+				028885902631081400777D6B /* CreateClipViewController.swift */,
 				028885552630F39A00777D6B /* ViewController.swift */,
 				028885852631030800777D6B /* PlayerView.swift */,
 				028885572630F39A00777D6B /* Main.storyboard */,
 				0288855A2630F39B00777D6B /* Assets.xcassets */,
 				0288855C2630F39B00777D6B /* LaunchScreen.storyboard */,
 				0288855F2630F39B00777D6B /* Info.plist */,
-				028885902631081400777D6B /* CreateClipViewController.swift */,
 			);
 			path = Clippi;
 			sourceTree = "<group>";

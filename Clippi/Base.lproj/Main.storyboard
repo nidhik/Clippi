@@ -32,7 +32,7 @@
                                 </constraints>
                                 <state key="normal" title="Clip"/>
                                 <connections>
-                                    <action selector="didPressClip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qoh-2d-z6W"/>
+                                    <segue destination="goX-FZ-xfE" kind="presentation" id="ptR-ck-fV0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -58,11 +58,11 @@
             <objects>
                 <viewController title="Create a Clip" id="goX-FZ-xfE" customClass="CreateClipViewController" customModule="Clippi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rxj-Uj-ULB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H82-eZ-dIa">
-                                <rect key="frame" x="19.5" y="348" width="375" height="210"/>
+                                <rect key="frame" x="19.5" y="299" width="375" height="210"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="1G8-z4-gYd"/>
@@ -70,7 +70,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3o-g0-et0">
-                                <rect key="frame" x="189" y="806" width="36" height="36"/>
+                                <rect key="frame" x="189" y="752" width="36" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="2sk-NR-wNX"/>
                                     <constraint firstAttribute="width" constant="36" id="zZ8-Vw-R4P"/>
@@ -81,7 +81,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rHX-l6-jQZ" customClass="TrimmerView" customModule="PryntTrimmerView">
-                                <rect key="frame" x="20" y="599" width="374" height="128"/>
+                                <rect key="frame" x="20" y="550" width="374" height="128"/>
                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="Ig0-QW-r41"/>
