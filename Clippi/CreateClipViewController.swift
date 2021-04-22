@@ -19,8 +19,8 @@ class CreateClipViewController: UIViewController {
     var player: AVPlayer?
     var playbackTimeCheckerTimer: Timer?
     var trimmerPositionChangedTimer: Timer?
-    
     let sourceAssetId = "MwaErgfmNR3OfzzuxBIXDfaSqE5HJkBUQYCnI902Ee5g"
+    var clipAssetId: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,22 @@ class CreateClipViewController: UIViewController {
         loadAsset()
     }
 
+    @IBAction func didPressCancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func didPressShare(_ sender: Any) {
+        guard let startTime = trimmerView.startTime, let endTime = trimmerView.endTime, let assetId = self.clipAssetId else {
+            return
+        }
+        NSLog("Trim from \(CMTimeGetSeconds(startTime)) to \(CMTimeGetSeconds(endTime))")
+        APIClient().clip(assetId: assetId, startTime: Float(CMTimeGetSeconds(startTime)), endTime:  Float(CMTimeGetSeconds(endTime))) { (successResponse) in
+            NSLog("SHAREME: https://stream.mux.com/\(successResponse.data.playbackId).m3u8")
+        } onFailure: { (errorReponse, error) in
+            NSLog("Failed to trim clip \(error)")
+        }
+    }
+    
     func play() {
 
         guard let player = player else { return }
@@ -49,6 +65,7 @@ class CreateClipViewController: UIViewController {
     func loadAsset() {
         APIClient().clip(assetId: sourceAssetId, startTime: nil, endTime: nil) { [self] (successResponse) in
             NSLog("Download: https://stream.mux.com/\(successResponse.data.playbackId)/low.mp4")
+            self.clipAssetId = successResponse.data.assetId
             let mp4 = "https://stream.mux.com/\(successResponse.data.playbackId)/low.mp4"
             let asset = AVAsset(url: URL(string: mp4)!)
             self.trimmerView.asset = asset
@@ -122,7 +139,6 @@ extension CreateClipViewController: TrimmerViewDelegate {
     }
 
     func didChangePositionBar(_ playerTime: CMTime) {
-        NSLog("Player time \(playerTime)")
         stopPlaybackTimeChecker()
         player?.pause()
         player?.seek(to: playerTime, toleranceBefore: CMTime.zero, toleranceAfter: CMTime.zero)

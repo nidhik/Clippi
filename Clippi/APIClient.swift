@@ -35,7 +35,7 @@ class APIClient {
         assetId: String,
         cancel: @escaping Cancel,
         onSuccess successHandler: @escaping ((_: APIGetClipSuccessResponse) -> Void),
-        onFailure failureHandler: @escaping ((_: APIRequest.ErrorResponse?, _: Error) -> Void)) {
+        onFailure failureHandler: @escaping ((_: APIRequest.ErrorResponse?, _: Error) -> Void)){
         return APIGetClipRequest(assetId: assetId)
             .dispatch(
                 onSuccess: { (successResponse) in
@@ -54,6 +54,7 @@ class APIClient {
         endTime: Float?,
         onSuccess successHandler: @escaping ((_: APIGetClipSuccessResponse) -> Void),
         onFailure failureHandler: @escaping ((_: APIRequest.ErrorResponse?, _: Error) -> Void)) {
+        
         APIClipRequest(assetId: assetId, startTime: startTime, endTime: endTime)
             .dispatch(
                 onSuccess: { (successResponse) in

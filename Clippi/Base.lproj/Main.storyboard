@@ -32,7 +32,7 @@
                                 </constraints>
                                 <state key="normal" title="Clip"/>
                                 <connections>
-                                    <segue destination="goX-FZ-xfE" kind="presentation" id="ptR-ck-fV0"/>
+                                    <segue destination="PRn-zT-w7A" kind="presentation" id="90B-KH-Ar3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -56,13 +56,13 @@
         <!--Create a Clip-->
         <scene sceneID="ex4-Id-Esr">
             <objects>
-                <viewController title="Create a Clip" id="goX-FZ-xfE" customClass="CreateClipViewController" customModule="Clippi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="goX-FZ-xfE" customClass="CreateClipViewController" customModule="Clippi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rxj-Uj-ULB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H82-eZ-dIa">
-                                <rect key="frame" x="19.5" y="299" width="375" height="210"/>
+                                <rect key="frame" x="19.5" y="327" width="375" height="210"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="1G8-z4-gYd"/>
@@ -70,7 +70,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rHX-l6-jQZ" customClass="TrimmerView" customModule="PryntTrimmerView">
-                                <rect key="frame" x="20" y="550" width="374" height="128"/>
+                                <rect key="frame" x="20" y="578" width="374" height="128"/>
                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="Ig0-QW-r41"/>
@@ -92,6 +92,19 @@
                             <constraint firstItem="H82-eZ-dIa" firstAttribute="centerX" secondItem="Zpa-vR-orC" secondAttribute="centerX" id="ttC-1h-Zq7"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Create a Clip" id="kMU-ot-1o3">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="0Om-0H-DQj"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="uaw-V9-Dt2">
+                            <connections>
+                                <action selector="didPressCancel:" destination="goX-FZ-xfE" id="o78-ep-l2N"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="GXR-Gy-5Ci">
+                            <connections>
+                                <action selector="didPressShare:" destination="goX-FZ-xfE" id="wuH-jf-VHz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="playerView" destination="H82-eZ-dIa" id="EFT-bR-g30"/>
                         <outlet property="trimmerView" destination="rHX-l6-jQZ" id="xhQ-fY-JTm"/>
@@ -99,7 +112,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5b-jb-fmu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1008.6956521739131" y="46.875"/>
+            <point key="canvasLocation" x="1836.2318840579712" y="38.839285714285715"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yWG-Rc-G8W">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PRn-zT-w7A" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="31B-xC-nae">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="goX-FZ-xfE" kind="relationship" relationship="rootViewController" id="MXB-a7-alC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IZQ-jS-XqY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924.63768115942037" y="38.839285714285715"/>
         </scene>
     </scenes>
     <resources>
