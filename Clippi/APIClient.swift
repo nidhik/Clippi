@@ -7,7 +7,57 @@
 
 import Foundation
 
+// From: https://stackoverflow.com/questions/44001806/perform-polling-request-for-async-task
+
+
+typealias Cancel = () -> Void
+
+class APIClient {
+    func pollForClip(assetId: String, duration: TimeInterval) -> Cancel{
+        let timer = DispatchSource.makeTimerSource(queue: DispatchQueue.main)
+        timer.schedule(deadline: .now(), repeating: .milliseconds(Int(duration * 1000)), leeway: .milliseconds(10))
+        timer.setEventHandler(handler: {
+            self.getClip(assetId: assetId, cancel: {
+                timer.cancel()
+            })
+        })
+        timer.resume()
+        return {
+            timer.cancel()
+        }
+    }
+
+    func getClip(assetId: String, cancel: @escaping Cancel) {
+        return APIGetClipRequest(assetId: assetId)
+            .dispatch(
+                onSuccess: { (successResponse) in
+                    NSLog("https://stream.mux.com/\(successResponse.data.playbackId).m3u8")
+                    NSLog("https://stream.mux.com/\(successResponse.data.playbackId)/low.mp4")
+                    cancel()
+            },
+                onFailure: { (errorResponse, error) in
+                 NSLog("Error getting clip \(error)")
+            })
+    }
+
+    func clip(playbackId: String) {
+        APIClipRequest(playbackId: playbackId, startTime: 1.0, endTime: 10.0)
+            .dispatch(
+                onSuccess: { (successResponse) in
+                    NSLog("\(successResponse.id)")
+                    _ = self.pollForClip(assetId: successResponse.id, duration: 2.0)
+                    
+            },
+                onFailure: { (errorResponse, error) in
+                 NSLog("Error making clip \(error)")
+            })
+    }
+    
+}
+
 // Note: pattern from https://medium.com/swift2go/minimal-swift-api-client-9ea1c9c7946
+ 
+//MARK: POST /api/clips
 
 struct APIClipRequest: Codable {
     let playbackId: String
@@ -35,6 +85,37 @@ extension APIClipRequest: APIEndpoint {
     }
 }
 
+//MARK: GET /api/clips/<id>
+
+struct APIGetClipRequest: Codable {
+    let assetId: String
+}
+
+struct APIGetClipSuccessResponse: Codable {
+    let data: APIData
+}
+
+struct APIData: Codable {
+    let playbackId: String
+    let assetId: String
+}
+
+extension APIGetClipRequest: APIEndpoint {
+    func endpoint() -> String {
+        return "/api/clips/\(assetId)"
+    }
+
+    func dispatch(
+        onSuccess successHandler: @escaping ((_: APIGetClipSuccessResponse) -> Void),
+        onFailure failureHandler: @escaping ((_: APIRequest.ErrorResponse?, _: Error) -> Void)) {
+
+        APIRequest.get(
+            request: self,
+            onSuccess: successHandler,
+            onError: failureHandler)
+    }
+}
+
 
 extension APIRequest {
     public static func post<R: Codable & APIEndpoint, T: Codable, E: Codable>(
@@ -55,6 +136,26 @@ extension APIRequest {
             onError(nil, error)
             return
         }
+
+        URLSession.shared.dataTask(
+            with: endpointRequest,
+            completionHandler: { (data, urlResponse, error) in
+                DispatchQueue.main.async {
+                    self.processResponse(data, urlResponse, error, onSuccess: onSuccess, onError: onError)
+                }
+        }).resume()
+    }
+    public static func get<R: Codable & APIEndpoint, T: Codable, E: Codable>(
+        request: R,
+        onSuccess: @escaping ((_: T) -> Void),
+        onError: @escaping ((_: E?, _: Error) -> Void)) {
+
+        guard var endpointRequest = self.urlRequest(from: request) else {
+            onError(nil, APIError.invalidEndpoint)
+            return
+        }
+        endpointRequest.httpMethod = "GET"
+        endpointRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
         URLSession.shared.dataTask(
             with: endpointRequest,
