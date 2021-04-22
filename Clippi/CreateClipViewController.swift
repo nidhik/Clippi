@@ -46,6 +46,7 @@ class CreateClipViewController: UIViewController {
                 let urlData = NSData(contentsOf: url) {
                 let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0];
                 let filePath="\(documentsPath)/tempFile.mp4"
+                let trimmedFilePath="\(documentsPath)/myclip.mp4"
                 DispatchQueue.main.async {
                     urlData.write(toFile: filePath, atomically: true)
                     PHPhotoLibrary.shared().performChanges({
@@ -53,11 +54,19 @@ class CreateClipViewController: UIViewController {
                     }) { completed, error in
                         if completed {
                             print("Video is saved!")
-                            DispatchQueue.main.async {
-                                let items = [URL(fileURLWithPath: filePath)]
-                                let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
-                                self.present(ac, animated: true)
+                            VideoTrimmer().trimVideo(sourceURL: URL(fileURLWithPath: filePath), destinationURL: URL(fileURLWithPath: trimmedFilePath), trimPoints: [(startTime, endTime)]) { (result) in
+                                switch result {
+                                    case .success(let url):
+                                        DispatchQueue.main.async {
+                                            let items = [url]
+                                            let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+                                            self.present(ac, animated: true)
+                                        }
+                                    case .failure(let error):
+                                        print(error.localizedDescription)
+                                    }
                             }
+                            
                         }
                     }
                 }

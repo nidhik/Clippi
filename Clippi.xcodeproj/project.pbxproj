@@ -20,6 +20,7 @@
 		028885912631081400777D6B /* CreateClipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028885902631081400777D6B /* CreateClipViewController.swift */; };
 		02A939642631335E0005CAC7 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A939632631335E0005CAC7 /* APIClient.swift */; };
 		02A9396E263135E90005CAC7 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A9396D263135E90005CAC7 /* APIRequest.swift */; };
+		02A93982263234ED0005CAC7 /* VideoTrimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A93981263234ED0005CAC7 /* VideoTrimmer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		02A9395C26310D840005CAC7 /* PryntTrimmerView */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PryntTrimmerView; path = ../../PryntTrimmerView; sourceTree = "<group>"; };
 		02A939632631335E0005CAC7 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		02A9396D263135E90005CAC7 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		02A93981263234ED0005CAC7 /* VideoTrimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTrimmer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				0288855A2630F39B00777D6B /* Assets.xcassets */,
 				0288855C2630F39B00777D6B /* LaunchScreen.storyboard */,
 				0288855F2630F39B00777D6B /* Info.plist */,
+				02A93981263234ED0005CAC7 /* VideoTrimmer.swift */,
 			);
 			path = Clippi;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				028885912631081400777D6B /* CreateClipViewController.swift in Sources */,
 				028885522630F39A00777D6B /* AppDelegate.swift in Sources */,
 				028885542630F39A00777D6B /* SceneDelegate.swift in Sources */,
+				02A93982263234ED0005CAC7 /* VideoTrimmer.swift in Sources */,
 				028885862631030800777D6B /* PlayerView.swift in Sources */,
 				02A9396E263135E90005CAC7 /* APIRequest.swift in Sources */,
 				02A939642631335E0005CAC7 /* APIClient.swift in Sources */,
