@@ -17,6 +17,9 @@
 		028885742630F39B00777D6B /* ClippiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028885732630F39B00777D6B /* ClippiUITests.swift */; };
 		028885862631030800777D6B /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028885852631030800777D6B /* PlayerView.swift */; };
 		0288858C263106F900777D6B /* PryntTrimmerView in Frameworks */ = {isa = PBXBuildFile; productRef = 0288858B263106F900777D6B /* PryntTrimmerView */; };
+		028885912631081400777D6B /* CreateClipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028885902631081400777D6B /* CreateClipViewController.swift */; };
+		02A939642631335E0005CAC7 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A939632631335E0005CAC7 /* APIClient.swift */; };
+		02A9396E263135E90005CAC7 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A9396D263135E90005CAC7 /* APIRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,10 @@
 		028885732630F39B00777D6B /* ClippiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClippiUITests.swift; sourceTree = "<group>"; };
 		028885752630F39B00777D6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		028885852631030800777D6B /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		028885902631081400777D6B /* CreateClipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClipViewController.swift; sourceTree = "<group>"; };
+		02A9395C26310D840005CAC7 /* PryntTrimmerView */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PryntTrimmerView; path = ../../PryntTrimmerView; sourceTree = "<group>"; };
+		02A939632631335E0005CAC7 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		02A9396D263135E90005CAC7 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,14 +110,18 @@
 		028885502630F39A00777D6B /* Clippi */ = {
 			isa = PBXGroup;
 			children = (
+				02A9395C26310D840005CAC7 /* PryntTrimmerView */,
 				028885512630F39A00777D6B /* AppDelegate.swift */,
 				028885532630F39A00777D6B /* SceneDelegate.swift */,
+				02A9396D263135E90005CAC7 /* APIRequest.swift */,
+				02A939632631335E0005CAC7 /* APIClient.swift */,
 				028885552630F39A00777D6B /* ViewController.swift */,
+				028885852631030800777D6B /* PlayerView.swift */,
 				028885572630F39A00777D6B /* Main.storyboard */,
 				0288855A2630F39B00777D6B /* Assets.xcassets */,
 				0288855C2630F39B00777D6B /* LaunchScreen.storyboard */,
 				0288855F2630F39B00777D6B /* Info.plist */,
-				028885852631030800777D6B /* PlayerView.swift */,
+				028885902631081400777D6B /* CreateClipViewController.swift */,
 			);
 			path = Clippi;
 			sourceTree = "<group>";
@@ -270,9 +281,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				028885562630F39A00777D6B /* ViewController.swift in Sources */,
+				028885912631081400777D6B /* CreateClipViewController.swift in Sources */,
 				028885522630F39A00777D6B /* AppDelegate.swift in Sources */,
 				028885542630F39A00777D6B /* SceneDelegate.swift in Sources */,
 				028885862631030800777D6B /* PlayerView.swift in Sources */,
+				02A9396E263135E90005CAC7 /* APIRequest.swift in Sources */,
+				02A939642631335E0005CAC7 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
