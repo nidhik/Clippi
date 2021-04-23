@@ -23,7 +23,7 @@ class CreateClipViewController: UIViewController {
     var playbackTimeCheckerTimer: Timer?
     var trimmerPositionChangedTimer: Timer?
     let url = URL(string: "https://stream.mux.com/rs2F5rY9QEKIAWyskqcNlwyQnB6i9ShDEQ7GDURpErw.m3u8")!
-    let sourceAssetId = "Gzrn5IUKGQYKz7hi1U3l8ZY00RcukBH00gKvHx014z8LUQ"
+    let sourceAssetId = "iPIhZOx4RLLT02B02wVUUDJHiKMeMTEtKODWiP68RCnqY"
     var clipAssetId: String?
     var previewView: GradientView? = nil
     override func viewDidLoad() {
