@@ -21,13 +21,11 @@ class CreateClipViewController: UIViewController {
     var player: AVPlayer?
     var playbackTimeCheckerTimer: Timer?
     var trimmerPositionChangedTimer: Timer?
-    let sourceAssetId = "UifztvE3a7IP27WoHxHE9c93LPZwD009uI5Xmybjkbj00"
+    let sourceAssetId = "200iFHyTLElCXyhTXjk2rIpe6SfkzocGhBJmkHr8z4jo"
     var clipAssetId: String?
     var previewView: GradientView? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
-        trimmerView.handleColor = UIColor.orange
-        trimmerView.mainColor = UIColor.purple
         trimmerView.minDuration = 5.0
         trimmerView.isHidden = true
         showPreview(url: "https://image.mux.com/rs2F5rY9QEKIAWyskqcNlwyQnB6i9ShDEQ7GDURpErw/thumbnail.png")

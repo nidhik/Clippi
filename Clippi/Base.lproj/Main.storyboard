@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Clippi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVU-3J-KpJ" customClass="PlayerView" customModule="Clippi" customModuleProvider="target">
-                                <rect key="frame" x="19.5" y="244" width="375" height="210"/>
+                                <rect key="frame" x="0.0" y="244" width="375" height="210"/>
                                 <color key="backgroundColor" red="0.99215686274509807" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="J13-nU-diu"/>
@@ -26,7 +25,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fgf-Pj-ar6">
-                                <rect key="frame" x="189" y="806" width="36" height="36"/>
+                                <rect key="frame" x="169.66666666666666" y="722" width="36" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="36" id="8hV-7C-NcI"/>
                                     <constraint firstAttribute="height" constant="36" id="e3b-EU-dho"/>
@@ -59,27 +58,32 @@
             <objects>
                 <viewController id="goX-FZ-xfE" customClass="CreateClipViewController" customModule="Clippi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rxj-Uj-ULB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H82-eZ-dIa">
-                                <rect key="frame" x="19.5" y="179" width="375" height="210"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <rect key="frame" x="0.0" y="192" width="375" height="210"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="1G8-z4-gYd"/>
                                     <constraint firstAttribute="height" constant="210" id="5hU-uU-0Ld"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rHX-l6-jQZ" customClass="TrimmerView" customModule="PryntTrimmerView">
-                                <rect key="frame" x="20" y="430" width="374" height="82"/>
-                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <rect key="frame" x="15.666666666666657" y="530" width="344" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="Ig0-QW-r41"/>
-                                    <constraint firstAttribute="height" constant="82" id="oAh-rb-snQ"/>
+                                    <constraint firstAttribute="width" constant="344" id="Ig0-QW-r41"/>
+                                    <constraint firstAttribute="height" constant="60" id="oAh-rb-snQ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="mainColor">
-                                        <color key="value" systemColor="systemYellowColor"/>
+                                        <color key="value" red="1" green="0.58039215690000001" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="handleColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="positionBarColor">
+                                        <color key="value" red="1" green="0.58039215686274503" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -87,8 +91,8 @@
                         <viewLayoutGuide key="safeArea" id="Zpa-vR-orC"/>
                         <color key="backgroundColor" red="0.99215686274509807" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="rHX-l6-jQZ" firstAttribute="top" secondItem="H82-eZ-dIa" secondAttribute="bottom" constant="41" id="4Xt-H5-itC"/>
-                            <constraint firstItem="H82-eZ-dIa" firstAttribute="top" secondItem="Zpa-vR-orC" secondAttribute="top" constant="123" id="G89-HU-UON"/>
+                            <constraint firstItem="Zpa-vR-orC" firstAttribute="bottom" secondItem="H82-eZ-dIa" secondAttribute="bottom" constant="322" id="UOP-hD-zTE"/>
+                            <constraint firstItem="Zpa-vR-orC" firstAttribute="bottom" secondItem="rHX-l6-jQZ" secondAttribute="bottom" constant="134" id="hpi-Th-iKU"/>
                             <constraint firstItem="rHX-l6-jQZ" firstAttribute="centerX" secondItem="Zpa-vR-orC" secondAttribute="centerX" id="j6H-Xz-zSF"/>
                             <constraint firstItem="H82-eZ-dIa" firstAttribute="centerX" secondItem="Zpa-vR-orC" secondAttribute="centerX" id="ttC-1h-Zq7"/>
                         </constraints>
@@ -96,11 +100,13 @@
                     <navigationItem key="navigationItem" title="Create a Clip" id="kMU-ot-1o3">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="0Om-0H-DQj"/>
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="uaw-V9-Dt2">
+                            <color key="tintColor" red="0.97647058823529409" green="0.4392156862745098" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="didPressCancel:" destination="goX-FZ-xfE" id="o78-ep-l2N"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Share" id="GXR-Gy-5Ci">
+                            <color key="tintColor" red="0.97647058823529409" green="0.4392156862745098" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="didPressShare:" destination="goX-FZ-xfE" id="wuH-jf-VHz"/>
                             </connections>
@@ -121,7 +127,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PRn-zT-w7A" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="31B-xC-nae">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -134,15 +140,4 @@
             <point key="canvasLocation" x="924.63768115942037" y="38.839285714285715"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>
