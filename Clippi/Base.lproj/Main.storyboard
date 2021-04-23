@@ -63,7 +63,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H82-eZ-dIa">
-                                <rect key="frame" x="19.5" y="327" width="375" height="210"/>
+                                <rect key="frame" x="19.5" y="179" width="375" height="210"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="1G8-z4-gYd"/>
@@ -71,11 +71,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rHX-l6-jQZ" customClass="TrimmerView" customModule="PryntTrimmerView">
-                                <rect key="frame" x="20" y="578" width="374" height="128"/>
+                                <rect key="frame" x="20" y="430" width="374" height="82"/>
                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="Ig0-QW-r41"/>
-                                    <constraint firstAttribute="height" constant="128" id="oAh-rb-snQ"/>
+                                    <constraint firstAttribute="height" constant="82" id="oAh-rb-snQ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="mainColor">
@@ -88,7 +88,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="rHX-l6-jQZ" firstAttribute="top" secondItem="H82-eZ-dIa" secondAttribute="bottom" constant="41" id="4Xt-H5-itC"/>
-                            <constraint firstItem="H82-eZ-dIa" firstAttribute="centerY" secondItem="Zpa-vR-orC" secondAttribute="centerY" id="GgT-LG-Lhz"/>
+                            <constraint firstItem="H82-eZ-dIa" firstAttribute="top" secondItem="Zpa-vR-orC" secondAttribute="top" constant="123" id="G89-HU-UON"/>
                             <constraint firstItem="rHX-l6-jQZ" firstAttribute="centerX" secondItem="Zpa-vR-orC" secondAttribute="centerX" id="j6H-Xz-zSF"/>
                             <constraint firstItem="H82-eZ-dIa" firstAttribute="centerX" secondItem="Zpa-vR-orC" secondAttribute="centerX" id="ttC-1h-Zq7"/>
                         </constraints>

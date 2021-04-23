@@ -100,12 +100,19 @@ class CreateClipViewController: UIViewController {
         self.previewImageView!.contentMode = .scaleAspectFill
         self.previewImageView!.frame = CGRect(x: 0, y: 0, width: self.playerView.bounds.width, height: self.playerView.bounds.height)
         self.playerView.addSubview(self.previewImageView!)
+        
+        let gradient = UIImage.imageWithGradient(from: UIColor(red: 255, green: 255, blue: 255, alpha: 0.6), to: UIColor(red: 255, green: 255, blue: 255, alpha: 0.6), with: self.previewImageView!.bounds)
+        let gradientView = UIImageView(image: gradient)
+        gradientView.contentMode = .scaleAspectFill
+        self.previewImageView?.addSubview(gradientView)
+        
+        
         let spinner = UIActivityIndicatorView(style: .large)
         spinner.translatesAutoresizingMaskIntoConstraints = false
         spinner.startAnimating()
         self.previewImageView!.addSubview(spinner)
-        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        spinner.centerXAnchor.constraint(equalTo: self.previewImageView!.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: self.previewImageView!.centerYAnchor).isActive = true
     }
 
     func loadAsset() {
@@ -194,5 +201,28 @@ extension CreateClipViewController: TrimmerViewDelegate {
         player?.seek(to: playerTime, toleranceBefore: CMTime.zero, toleranceAfter: CMTime.zero)
         let duration = (trimmerView.endTime! - trimmerView.startTime!).seconds
         print(duration)
+    }
+}
+
+// https://gist.github.com/phucnm/79fc6c29cb6d30f357340cc1718c1b27
+extension UIImage {
+    /**
+     Create gradient image from beginColor on top and end color at bottom
+     
+     - parameter beginColor: beginColor
+     - parameter endColor:   endColor
+     - parameter frame:      frame to be filled
+     
+     - returns: filled image
+     */
+    static func imageWithGradient(from beginColor: UIColor, to endColor: UIColor, with frame: CGRect) -> UIImage? {
+        let layer = CAGradientLayer()
+        layer.frame = frame
+        layer.colors = [beginColor.cgColor, endColor.cgColor]
+        UIGraphicsBeginImageContext(CGSize(width: frame.width, height: frame.height))
+        layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
     }
 }
