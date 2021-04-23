@@ -38,20 +38,20 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="28"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Livestream hexagon retro neutra artisan butcher  " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ud-if-klh">
-                                <rect key="frame" x="16" y="462" width="343" height="48"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paper planes around the world" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ud-if-klh">
+                                <rect key="frame" x="16" y="462" width="343" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 viewer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhG-YQ-VwQ">
-                                <rect key="frame" x="16" y="519" width="53" height="17"/>
+                                <rect key="frame" x="16" y="495" width="53" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.60426476883561642" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8bs-At-GNk">
-                                <rect key="frame" x="16" y="544" width="40" height="40"/>
+                                <rect key="frame" x="16" y="534" width="40" height="40"/>
                                 <color key="backgroundColor" red="0.72549019609999998" green="0.3921568627" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="VNK-7r-zUJ"/>
@@ -69,7 +69,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delightful Internet Origami" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3o-JL-cHL">
-                                <rect key="frame" x="64" y="544" width="201" height="40"/>
+                                <rect key="frame" x="64" y="534" width="201" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -78,19 +78,19 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.99215686274509807" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="u3o-JL-cHL" secondAttribute="bottom" constant="228" id="5c8-ha-1WF"/>
                             <constraint firstItem="bPE-jb-aaM" firstAttribute="firstBaseline" secondItem="IGW-N5-zvC" secondAttribute="firstBaseline" id="72m-B7-mUw"/>
                             <constraint firstItem="u3o-JL-cHL" firstAttribute="leading" secondItem="8bs-At-GNk" secondAttribute="trailing" constant="8" symbolic="YES" id="7Kl-de-FDe"/>
                             <constraint firstItem="u3o-JL-cHL" firstAttribute="top" secondItem="8bs-At-GNk" secondAttribute="top" id="CvH-31-kuv"/>
                             <constraint firstItem="cVU-3J-KpJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="NkY-uZ-pej"/>
                             <constraint firstItem="cVU-3J-KpJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="OL4-PD-PAF"/>
                             <constraint firstItem="zhG-YQ-VwQ" firstAttribute="leading" secondItem="1ud-if-klh" secondAttribute="leading" id="UCF-xQ-e9c"/>
+                            <constraint firstItem="zhG-YQ-VwQ" firstAttribute="top" secondItem="1ud-if-klh" secondAttribute="bottom" constant="9" id="VQ1-xT-r4N"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IGW-N5-zvC" secondAttribute="bottom" constant="26" id="WEG-eC-kSd"/>
                             <constraint firstItem="IGW-N5-zvC" firstAttribute="leading" secondItem="bPE-jb-aaM" secondAttribute="trailing" constant="30" id="Wf7-JP-PGE"/>
                             <constraint firstItem="u3o-JL-cHL" firstAttribute="bottom" secondItem="8bs-At-GNk" secondAttribute="bottom" id="bfx-iU-hdc"/>
                             <constraint firstItem="IGW-N5-zvC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dqf-Yl-aOK"/>
                             <constraint firstItem="8bs-At-GNk" firstAttribute="leading" secondItem="zhG-YQ-VwQ" secondAttribute="leading" id="eBX-p1-dFY"/>
-                            <constraint firstItem="8bs-At-GNk" firstAttribute="top" secondItem="zhG-YQ-VwQ" secondAttribute="bottom" constant="8" symbolic="YES" id="g17-vt-lcO"/>
+                            <constraint firstItem="8bs-At-GNk" firstAttribute="top" secondItem="zhG-YQ-VwQ" secondAttribute="bottom" constant="22" id="g17-vt-lcO"/>
                             <constraint firstItem="1ud-if-klh" firstAttribute="top" secondItem="cVU-3J-KpJ" secondAttribute="bottom" constant="8" symbolic="YES" id="iFm-nB-4sc"/>
                             <constraint firstItem="1ud-if-klh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="rqz-YG-w26"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1ud-if-klh" secondAttribute="trailing" constant="16" id="uTc-G7-W9F"/>
@@ -140,13 +140,21 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clip length: 30 s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJn-4n-ci8">
+                                <rect key="frame" x="131.66666666666666" y="610" width="112" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Zpa-vR-orC"/>
                         <color key="backgroundColor" red="0.99215686274509807" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Zpa-vR-orC" firstAttribute="bottom" secondItem="H82-eZ-dIa" secondAttribute="bottom" constant="322" id="UOP-hD-zTE"/>
+                            <constraint firstItem="OJn-4n-ci8" firstAttribute="centerX" secondItem="Zpa-vR-orC" secondAttribute="centerX" id="b3w-Ad-Ues"/>
                             <constraint firstItem="Zpa-vR-orC" firstAttribute="bottom" secondItem="rHX-l6-jQZ" secondAttribute="bottom" constant="134" id="hpi-Th-iKU"/>
                             <constraint firstItem="rHX-l6-jQZ" firstAttribute="centerX" secondItem="Zpa-vR-orC" secondAttribute="centerX" id="j6H-Xz-zSF"/>
+                            <constraint firstItem="Zpa-vR-orC" firstAttribute="bottom" secondItem="OJn-4n-ci8" secondAttribute="bottom" constant="96" id="jkC-Ci-nKk"/>
                             <constraint firstItem="H82-eZ-dIa" firstAttribute="centerX" secondItem="Zpa-vR-orC" secondAttribute="centerX" id="ttC-1h-Zq7"/>
                         </constraints>
                     </view>
@@ -166,6 +174,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="clipLengthLabel" destination="OJn-4n-ci8" id="gUn-Wu-urP"/>
                         <outlet property="playerView" destination="H82-eZ-dIa" id="EFT-bR-g30"/>
                         <outlet property="trimmerView" destination="rHX-l6-jQZ" id="xhQ-fY-JTm"/>
                     </connections>

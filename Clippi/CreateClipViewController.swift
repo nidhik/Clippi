@@ -18,6 +18,7 @@ class CreateClipViewController: UIViewController {
     @IBOutlet weak var playerView: UIView!
     @IBOutlet weak var trimmerView: TrimmerView!
 
+    @IBOutlet weak var clipLengthLabel: UILabel!
     var player: AVPlayer?
     var playbackTimeCheckerTimer: Timer?
     var trimmerPositionChangedTimer: Timer?
@@ -29,6 +30,7 @@ class CreateClipViewController: UIViewController {
         super.viewDidLoad()
         trimmerView.minDuration = 5.0
         trimmerView.isHidden = true
+        clipLengthLabel.isHidden = true
         showPreview()
         loadAsset()
     }
@@ -124,6 +126,7 @@ class CreateClipViewController: UIViewController {
             self.previewView?.removeFromSuperview()
             self.addVideoPlayer(with: asset, playerView: self.playerView)
             self.trimmerView.isHidden = false
+            self.clipLengthLabel.isHidden = false
         } onFailure: { (_, error) in
             NSLog("\(error)")
         }
@@ -166,13 +169,22 @@ class CreateClipViewController: UIViewController {
         playbackTimeCheckerTimer?.invalidate()
         playbackTimeCheckerTimer = nil
     }
+    
+    func updateClipLengthLabel() {
+        guard let startTime = trimmerView.startTime, let endTime = trimmerView.endTime else {
+            return
+        }
+        let length = Int(CMTimeGetSeconds(endTime) - CMTimeGetSeconds(startTime))
+        let newLengthText = "Clip length: \(length) s"
+        self.clipLengthLabel.text = newLengthText
+    }
 
     @objc func onPlaybackTimeChecker() {
 
         guard let startTime = trimmerView.startTime, let endTime = trimmerView.endTime, let player = player else {
             return
         }
-
+        
         let playBackTime = player.currentTime()
         trimmerView.seek(to: playBackTime)
 
@@ -194,8 +206,7 @@ extension CreateClipViewController: TrimmerViewDelegate {
         stopPlaybackTimeChecker()
         player?.pause()
         player?.seek(to: playerTime, toleranceBefore: CMTime.zero, toleranceAfter: CMTime.zero)
-        let duration = (trimmerView.endTime! - trimmerView.startTime!).seconds
-        print(duration)
+        updateClipLengthLabel()
     }
 }
 
