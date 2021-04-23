@@ -23,7 +23,7 @@ class CreateClipViewController: UIViewController {
     var trimmerPositionChangedTimer: Timer?
     let sourceAssetId = "UifztvE3a7IP27WoHxHE9c93LPZwD009uI5Xmybjkbj00"
     var clipAssetId: String?
-    var previewImageView: UIImageView? = nil
+    var previewView: GradientView? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         trimmerView.handleColor = UIColor.orange
@@ -95,24 +95,10 @@ class CreateClipViewController: UIViewController {
     }
     
     func showPreview(url: String) {
-        self.previewImageView = UIImageView()
-        self.previewImageView!.kf.setImage(with: URL(string: url))
-        self.previewImageView!.contentMode = .scaleAspectFill
-        self.previewImageView!.frame = CGRect(x: 0, y: 0, width: self.playerView.bounds.width, height: self.playerView.bounds.height)
-        self.playerView.addSubview(self.previewImageView!)
-        
-        let gradient = UIImage.imageWithGradient(from: UIColor(red: 255, green: 255, blue: 255, alpha: 0.6), to: UIColor(red: 255, green: 255, blue: 255, alpha: 0.6), with: self.previewImageView!.bounds)
-        let gradientView = UIImageView(image: gradient)
-        gradientView.contentMode = .scaleAspectFill
-        self.previewImageView?.addSubview(gradientView)
-        
-        
-        let spinner = UIActivityIndicatorView(style: .large)
-        spinner.translatesAutoresizingMaskIntoConstraints = false
-        spinner.startAnimating()
-        self.previewImageView!.addSubview(spinner)
-        spinner.centerXAnchor.constraint(equalTo: self.previewImageView!.centerXAnchor).isActive = true
-        spinner.centerYAnchor.constraint(equalTo: self.previewImageView!.centerYAnchor).isActive = true
+        self.previewView = GradientView(frame: CGRect(x: 0, y: 0, width: self.playerView.bounds.width, height: self.playerView.bounds.height))
+        self.previewView!.imageView.kf.setImage(with: URL(string: url))
+        self.previewView!.imageView.contentMode = .scaleAspectFill
+        self.playerView.addSubview(self.previewView!)
     }
 
     func loadAsset() {
@@ -126,7 +112,7 @@ class CreateClipViewController: UIViewController {
             let asset = AVAsset(url: URL(string: mp4)!)
             self.trimmerView.asset = asset
             self.trimmerView.delegate = self
-            self.previewImageView?.removeFromSuperview()
+            self.previewView?.removeFromSuperview()
             self.addVideoPlayer(with: asset, playerView: self.playerView)
             self.trimmerView.isHidden = false
         } onFailure: { (_, error) in

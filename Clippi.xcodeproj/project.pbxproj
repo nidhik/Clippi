@@ -22,6 +22,8 @@
 		02A9396E263135E90005CAC7 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A9396D263135E90005CAC7 /* APIRequest.swift */; };
 		02A93982263234ED0005CAC7 /* VideoTrimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A93981263234ED0005CAC7 /* VideoTrimmer.swift */; };
 		02A93988263275FB0005CAC7 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 02A93987263275FB0005CAC7 /* Kingfisher */; };
+		02A9398D263282C20005CAC7 /* GradientView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A9398C263282C20005CAC7 /* GradientView.xib */; };
+		02A93992263282D40005CAC7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A93991263282D40005CAC7 /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		02A939632631335E0005CAC7 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		02A9396D263135E90005CAC7 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		02A93981263234ED0005CAC7 /* VideoTrimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTrimmer.swift; sourceTree = "<group>"; };
+		02A9398C263282C20005CAC7 /* GradientView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GradientView.xib; sourceTree = "<group>"; };
+		02A93991263282D40005CAC7 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,8 @@
 				0288855C2630F39B00777D6B /* LaunchScreen.storyboard */,
 				0288855F2630F39B00777D6B /* Info.plist */,
 				02A93981263234ED0005CAC7 /* VideoTrimmer.swift */,
+				02A9398C263282C20005CAC7 /* GradientView.xib */,
+				02A93991263282D40005CAC7 /* GradientView.swift */,
 			);
 			path = Clippi;
 			sourceTree = "<group>";
@@ -262,6 +268,7 @@
 			files = (
 				0288855E2630F39B00777D6B /* LaunchScreen.storyboard in Resources */,
 				0288855B2630F39B00777D6B /* Assets.xcassets in Resources */,
+				02A9398D263282C20005CAC7 /* GradientView.xib in Resources */,
 				028885592630F39A00777D6B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +302,7 @@
 				028885862631030800777D6B /* PlayerView.swift in Sources */,
 				02A9396E263135E90005CAC7 /* APIRequest.swift in Sources */,
 				02A939642631335E0005CAC7 /* APIClient.swift in Sources */,
+				02A93992263282D40005CAC7 /* GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

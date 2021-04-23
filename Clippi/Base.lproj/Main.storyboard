@@ -19,7 +19,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVU-3J-KpJ" customClass="PlayerView" customModule="Clippi" customModuleProvider="target">
                                 <rect key="frame" x="19.5" y="244" width="375" height="210"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="backgroundColor" red="0.99215686274509807" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="J13-nU-diu"/>
                                     <constraint firstAttribute="height" constant="210" id="pf7-Rv-dDp"/>
@@ -38,7 +38,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.99215686274509807" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Fgf-Pj-ar6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Bmc-Kg-Vfg"/>
                             <constraint firstItem="cVU-3J-KpJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="NkY-uZ-pej"/>
@@ -85,7 +85,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Zpa-vR-orC"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.99215686274509807" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="rHX-l6-jQZ" firstAttribute="top" secondItem="H82-eZ-dIa" secondAttribute="bottom" constant="41" id="4Xt-H5-itC"/>
                             <constraint firstItem="H82-eZ-dIa" firstAttribute="top" secondItem="Zpa-vR-orC" secondAttribute="top" constant="123" id="G89-HU-UON"/>
@@ -135,9 +135,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
