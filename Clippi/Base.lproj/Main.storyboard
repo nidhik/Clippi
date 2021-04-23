@@ -80,7 +80,7 @@
             </objects>
             <point key="canvasLocation" x="140" y="46.551724137931039"/>
         </scene>
-        <!--Create a Clip-->
+        <!--Create Clip-->
         <scene sceneID="ex4-Id-Esr">
             <objects>
                 <viewController id="goX-FZ-xfE" customClass="CreateClipViewController" customModule="Clippi" customModuleProvider="target" sceneMemberID="viewController">
@@ -124,7 +124,7 @@
                             <constraint firstItem="H82-eZ-dIa" firstAttribute="centerX" secondItem="Zpa-vR-orC" secondAttribute="centerX" id="ttC-1h-Zq7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Create a Clip" id="kMU-ot-1o3">
+                    <navigationItem key="navigationItem" title="Create Clip" id="kMU-ot-1o3">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="0Om-0H-DQj"/>
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="uaw-V9-Dt2">
                             <color key="tintColor" red="0.97647058823529409" green="0.4392156862745098" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

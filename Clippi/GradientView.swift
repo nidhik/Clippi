@@ -10,7 +10,8 @@ import UIKit
 class GradientView: UIView {
     
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var gradientView: UIView!
+    @IBOutlet weak var playerView: PlayerView!
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!

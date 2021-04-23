@@ -21,6 +21,7 @@ class CreateClipViewController: UIViewController {
     var player: AVPlayer?
     var playbackTimeCheckerTimer: Timer?
     var trimmerPositionChangedTimer: Timer?
+    let url = URL(string: "https://stream.mux.com/rs2F5rY9QEKIAWyskqcNlwyQnB6i9ShDEQ7GDURpErw.m3u8")!
     let sourceAssetId = "200iFHyTLElCXyhTXjk2rIpe6SfkzocGhBJmkHr8z4jo"
     var clipAssetId: String?
     var previewView: GradientView? = nil
@@ -28,7 +29,7 @@ class CreateClipViewController: UIViewController {
         super.viewDidLoad()
         trimmerView.minDuration = 5.0
         trimmerView.isHidden = true
-        showPreview(url: "https://image.mux.com/rs2F5rY9QEKIAWyskqcNlwyQnB6i9ShDEQ7GDURpErw/thumbnail.png")
+        showPreview()
         loadAsset()
     }
 
@@ -92,11 +93,14 @@ class CreateClipViewController: UIViewController {
         return self.player?.rate != 0 && self.player?.error == nil
     }
     
-    func showPreview(url: String) {
+    func showPreview() {
+        
         self.previewView = GradientView(frame: CGRect(x: 0, y: 0, width: self.playerView.bounds.width, height: self.playerView.bounds.height))
-        self.previewView!.imageView.kf.setImage(with: URL(string: url))
-        self.previewView!.imageView.contentMode = .scaleAspectFill
         self.playerView.addSubview(self.previewView!)
+        let asset = AVAsset(url: self.url)
+        let playerItem = AVPlayerItem(asset: asset)
+        self.previewView!.playerView.player = AVPlayer(playerItem: playerItem)
+        self.previewView!.playerView.player?.play()
     }
 
     func loadAsset() {

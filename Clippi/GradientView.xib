@@ -12,7 +12,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GradientView" customModule="Clippi" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="Y8k-T9-xOz"/>
-                <outlet property="imageView" destination="g3w-PC-ICq" id="N1F-ze-ow7"/>
+                <outlet property="gradientView" destination="fAP-HI-ZrF" id="cdl-Gr-R9K"/>
+                <outlet property="playerView" destination="6yY-fS-A8J" id="O1M-EB-a2s"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -20,9 +21,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g3w-PC-ICq">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6yY-fS-A8J" customClass="PlayerView" customModule="Clippi" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                </imageView>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fAP-HI-ZrF">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69405500856164382" colorSpace="custom" customColorSpace="sRGB"/>
@@ -41,22 +43,18 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fAP-HI-ZrF" firstAttribute="leading" secondItem="g3w-PC-ICq" secondAttribute="leading" id="05Q-cJ-hRn"/>
                 <constraint firstItem="IR9-zB-BIb" firstAttribute="firstBaseline" secondItem="iGQ-0s-5SL" secondAttribute="baseline" constant="24" id="1Nt-4P-avg"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="g3w-PC-ICq" secondAttribute="trailing" id="2nK-2p-gAX"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="g3w-PC-ICq" secondAttribute="trailing" id="7f7-ey-QRO"/>
-                <constraint firstItem="IR9-zB-BIb" firstAttribute="centerX" secondItem="g3w-PC-ICq" secondAttribute="centerX" id="9HF-zn-czl"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="g3w-PC-ICq" secondAttribute="top" id="Rde-EI-JUc"/>
-                <constraint firstItem="g3w-PC-ICq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="TKf-dz-546"/>
-                <constraint firstItem="iGQ-0s-5SL" firstAttribute="centerY" secondItem="g3w-PC-ICq" secondAttribute="centerY" id="XYh-Wz-FAk"/>
-                <constraint firstItem="fAP-HI-ZrF" firstAttribute="bottom" secondItem="g3w-PC-ICq" secondAttribute="bottom" id="aeJ-aa-e7e"/>
-                <constraint firstItem="g3w-PC-ICq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bun-cw-qyE"/>
-                <constraint firstItem="fAP-HI-ZrF" firstAttribute="trailing" secondItem="g3w-PC-ICq" secondAttribute="trailing" id="bv1-Pr-Lni"/>
-                <constraint firstItem="fAP-HI-ZrF" firstAttribute="top" secondItem="g3w-PC-ICq" secondAttribute="top" id="d7U-x9-bW4"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="g3w-PC-ICq" secondAttribute="bottom" id="hjm-Bt-bA0"/>
-                <constraint firstItem="iGQ-0s-5SL" firstAttribute="centerX" secondItem="g3w-PC-ICq" secondAttribute="centerX" id="nn5-jG-lWD"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="g3w-PC-ICq" secondAttribute="bottom" id="r9H-Yx-vvX"/>
-                <constraint firstItem="g3w-PC-ICq" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="yjy-cn-B7Z"/>
+                <constraint firstItem="6yY-fS-A8J" firstAttribute="leading" secondItem="fAP-HI-ZrF" secondAttribute="leading" id="EA4-fE-0Fy"/>
+                <constraint firstItem="6yY-fS-A8J" firstAttribute="top" secondItem="fAP-HI-ZrF" secondAttribute="top" id="IeM-rv-b3A"/>
+                <constraint firstItem="6yY-fS-A8J" firstAttribute="trailing" secondItem="fAP-HI-ZrF" secondAttribute="trailing" id="LNj-LE-2Cr"/>
+                <constraint firstItem="IR9-zB-BIb" firstAttribute="centerX" secondItem="iGQ-0s-5SL" secondAttribute="centerX" id="O8j-kv-lCe"/>
+                <constraint firstItem="fAP-HI-ZrF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="OG0-ow-5AK"/>
+                <constraint firstItem="fAP-HI-ZrF" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ajK-Am-qfh"/>
+                <constraint firstItem="6yY-fS-A8J" firstAttribute="bottom" secondItem="fAP-HI-ZrF" secondAttribute="bottom" id="cQf-XK-wOo"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="fAP-HI-ZrF" secondAttribute="bottom" id="dqL-rR-rIN"/>
+                <constraint firstItem="iGQ-0s-5SL" firstAttribute="centerY" secondItem="fAP-HI-ZrF" secondAttribute="centerY" id="ehO-LC-LPb"/>
+                <constraint firstItem="iGQ-0s-5SL" firstAttribute="centerX" secondItem="fAP-HI-ZrF" secondAttribute="centerX" id="nIa-DM-jqc"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fAP-HI-ZrF" secondAttribute="trailing" id="nis-5c-iLo"/>
             </constraints>
             <point key="canvasLocation" x="-452.17391304347831" y="-924.10714285714278"/>
         </view>
