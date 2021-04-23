@@ -9,6 +9,7 @@ import UIKit
 import AVFoundation
 import PryntTrimmerView
 import PhotosUI
+import Kingfisher
 
 /// A view controller to demonstrate the trimming of a video. Make sure the scene is selected as the initial
 // view controller in the storyboard
@@ -20,14 +21,16 @@ class CreateClipViewController: UIViewController {
     var player: AVPlayer?
     var playbackTimeCheckerTimer: Timer?
     var trimmerPositionChangedTimer: Timer?
-    let sourceAssetId = "U4RQ8cgj8zeL00VsacQe7lLCEyYkXIPHn1AMEWSdT6bo"
+    let sourceAssetId = "UifztvE3a7IP27WoHxHE9c93LPZwD009uI5Xmybjkbj00"
     var clipAssetId: String?
-
+    var previewImageView: UIImageView? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         trimmerView.handleColor = UIColor.orange
         trimmerView.mainColor = UIColor.purple
         trimmerView.minDuration = 5.0
+        trimmerView.isHidden = true
+        showPreview(url: "https://image.mux.com/rs2F5rY9QEKIAWyskqcNlwyQnB6i9ShDEQ7GDURpErw/thumbnail.png")
         loadAsset()
     }
 
@@ -72,17 +75,6 @@ class CreateClipViewController: UIViewController {
                 }
             }
         }
-        
-        
-//        APIClient().clip(assetId: assetId, startTime: Float(CMTimeGetSeconds(startTime)), endTime:  Float(CMTimeGetSeconds(endTime))) { (successResponse) in
-//            NSLog("SHAREME: https://stream.mux.com/\(successResponse.data.playbackId).m3u8")
-//            let mp4 = "https://stream.mux.com/\(successResponse.data.playbackId)/low.mp4"
-//
-//
-//
-//        } onFailure: { (errorReponse, error) in
-//            NSLog("Failed to trim clip \(error)")
-//        }
     }
     
     func play() {
@@ -101,19 +93,37 @@ class CreateClipViewController: UIViewController {
     func isPlaying() -> Bool {
         return self.player?.rate != 0 && self.player?.error == nil
     }
+    
+    func showPreview(url: String) {
+        self.previewImageView = UIImageView()
+        self.previewImageView!.kf.setImage(with: URL(string: url))
+        self.previewImageView!.contentMode = .scaleAspectFill
+        self.previewImageView!.frame = CGRect(x: 0, y: 0, width: self.playerView.bounds.width, height: self.playerView.bounds.height)
+        self.playerView.addSubview(self.previewImageView!)
+        let spinner = UIActivityIndicatorView(style: .large)
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.startAnimating()
+        self.previewImageView!.addSubview(spinner)
+        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    }
 
     func loadAsset() {
-        APIClient().clip(assetId: sourceAssetId, startTime: nil, endTime: nil) { [self] (successResponse) in
+        APIClient().clip(assetId: sourceAssetId, startTime: nil, endTime: nil) { (preview) in
+            
+
+        } onSuccess: { (successResponse) in
             NSLog("Download: https://stream.mux.com/\(successResponse.data.playbackId)/low.mp4")
             self.clipAssetId = successResponse.data.assetId
             let mp4 = "https://stream.mux.com/\(successResponse.data.playbackId)/low.mp4"
             let asset = AVAsset(url: URL(string: mp4)!)
             self.trimmerView.asset = asset
             self.trimmerView.delegate = self
+            self.previewImageView?.removeFromSuperview()
             self.addVideoPlayer(with: asset, playerView: self.playerView)
-            
-        } onFailure: { (errorReponse, error) in
-            NSLog("Failed to make 30 clip \(error)")
+            self.trimmerView.isHidden = false
+        } onFailure: { (_, error) in
+            NSLog("\(error)")
         }
 
         

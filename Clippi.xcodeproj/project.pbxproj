@@ -21,6 +21,7 @@
 		02A939642631335E0005CAC7 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A939632631335E0005CAC7 /* APIClient.swift */; };
 		02A9396E263135E90005CAC7 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A9396D263135E90005CAC7 /* APIRequest.swift */; };
 		02A93982263234ED0005CAC7 /* VideoTrimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A93981263234ED0005CAC7 /* VideoTrimmer.swift */; };
+		02A93988263275FB0005CAC7 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 02A93987263275FB0005CAC7 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02A93988263275FB0005CAC7 /* Kingfisher in Frameworks */,
 				0288858C263106F900777D6B /* PryntTrimmerView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,6 +167,7 @@
 			name = Clippi;
 			packageProductDependencies = (
 				0288858B263106F900777D6B /* PryntTrimmerView */,
+				02A93987263275FB0005CAC7 /* Kingfisher */,
 			);
 			productName = Clippi;
 			productReference = 0288854E2630F39A00777D6B /* Clippi.app */;
@@ -239,6 +242,7 @@
 			mainGroup = 028885452630F39A00777D6B;
 			packageReferences = (
 				0288858A263106F800777D6B /* XCRemoteSwiftPackageReference "PryntTrimmerView" */,
+				02A93986263275FB0005CAC7 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 0288854F2630F39A00777D6B /* Products */;
 			projectDirPath = "";
@@ -633,6 +637,14 @@
 				minimumVersion = 4.0.1;
 			};
 		};
+		02A93986263275FB0005CAC7 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -640,6 +652,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0288858A263106F800777D6B /* XCRemoteSwiftPackageReference "PryntTrimmerView" */;
 			productName = PryntTrimmerView;
+		};
+		02A93987263275FB0005CAC7 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 02A93986263275FB0005CAC7 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

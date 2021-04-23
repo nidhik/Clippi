@@ -52,6 +52,7 @@ class APIClient {
         assetId: String,
         startTime: Float?,
         endTime: Float?,
+        onPreview previewHandler: @escaping ((_: String) -> Void),
         onSuccess successHandler: @escaping ((_: APIGetClipSuccessResponse) -> Void),
         onFailure failureHandler: @escaping ((_: APIRequest.ErrorResponse?, _: Error) -> Void)) {
         
@@ -59,6 +60,7 @@ class APIClient {
             .dispatch(
                 onSuccess: { (successResponse) in
                     NSLog("\(successResponse.id)")
+                    previewHandler("https://image.mux.com/\(successResponse.playbackId)/thumbnail.png")
                     _ = self.pollForClip(assetId: successResponse.id, duration: 2.0, onSuccess: successHandler, onFailure: failureHandler)
                     
             },
@@ -80,6 +82,7 @@ struct APIClipRequest: Codable {
 
 struct APIClipSuccessResponse: Codable {
     let id: String
+    let playbackId: String
 }
 
 extension APIClipRequest: APIEndpoint {

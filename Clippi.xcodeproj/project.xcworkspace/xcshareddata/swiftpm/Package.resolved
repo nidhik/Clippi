@@ -2,12 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "PryntTrimmerView",
-        "repositoryURL": "https://github.com/HHK1/PryntTrimmerView.git",
+        "package": "Kingfisher",
+        "repositoryURL": "https://github.com/onevcat/Kingfisher.git",
         "state": {
           "branch": null,
-          "revision": "ac1b60a22c7e6a6514de7a66d2f3d5b537c956d5",
-          "version": "4.0.2"
+          "revision": "44450a8f564d7c0165f736ba2250649ff8d3e556",
+          "version": "6.3.0"
         }
       }
     ]
