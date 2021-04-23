@@ -30,9 +30,9 @@
                                 <state key="normal" image="bubble.left" catalog="system"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPE-jb-aaM">
-                                <rect key="frame" x="126.33333333333333" y="730" width="19.666666666666671" height="22"/>
+                                <rect key="frame" x="125.33333333333333" y="730" width="20.666666666666671" height="22"/>
                                 <color key="tintColor" red="1" green="0.58039215690000001" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="face.smiling" catalog="system"/>
+                                <state key="normal" image="heart" catalog="system"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Livestream hexagon retro neutra artisan butcher  " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ud-if-klh">
                                 <rect key="frame" x="16" y="462" width="343" height="48"/>
@@ -169,7 +169,7 @@
     </scenes>
     <resources>
         <image name="bubble.left" catalog="system" width="128" height="110"/>
-        <image name="face.smiling" catalog="system" width="128" height="121"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
     </resources>
 </document>
