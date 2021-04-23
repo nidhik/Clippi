@@ -50,9 +50,9 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.60426476883561642" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8bs-At-GNk">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="8bs-At-GNk">
                                 <rect key="frame" x="16" y="534" width="40" height="40"/>
-                                <color key="backgroundColor" red="0.72549019609999998" green="0.3921568627" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="VNK-7r-zUJ"/>
                                     <constraint firstAttribute="height" constant="40" id="ZmG-oG-Ko1"/>
@@ -205,6 +205,7 @@
     <resources>
         <image name="bubble.left" catalog="system" width="128" height="110"/>
         <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="profile" width="24" height="24"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
     </resources>
 </document>
