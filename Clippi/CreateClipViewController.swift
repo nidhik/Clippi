@@ -22,7 +22,7 @@ class CreateClipViewController: UIViewController {
     var playbackTimeCheckerTimer: Timer?
     var trimmerPositionChangedTimer: Timer?
     let url = URL(string: "https://stream.mux.com/rs2F5rY9QEKIAWyskqcNlwyQnB6i9ShDEQ7GDURpErw.m3u8")!
-    let sourceAssetId = "ZgfFsr2CUCDve7ta5upoEMfwnlhQGDgHoouDyHilEPc"
+    let sourceAssetId = "Gzrn5IUKGQYKz7hi1U3l8ZY00RcukBH00gKvHx014z8LUQ"
     var clipAssetId: String?
     var previewView: GradientView? = nil
     override func viewDidLoad() {
@@ -62,6 +62,13 @@ class CreateClipViewController: UIViewController {
                                         DispatchQueue.main.async {
                                             let items = [url]
                                             let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+                                            ac.completionWithItemsHandler = { activity, completed, items, error in
+                                                        if !completed {
+                                                            // handle task not completed
+                                                            return
+                                                        }
+                                                self.dismiss(animated: true, completion: nil)
+                                                    }
                                             self.present(ac, animated: true)
                                         }
                                     case .failure(let error):

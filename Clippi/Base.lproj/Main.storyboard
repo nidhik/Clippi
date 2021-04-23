@@ -25,14 +25,18 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGW-N5-zvC">
-                                <rect key="frame" x="176" y="730" width="23" height="22"/>
+                                <rect key="frame" x="169" y="718.66666666666663" width="37" height="33.333333333333371"/>
                                 <color key="tintColor" red="1" green="0.58039215690000001" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="bubble.left" catalog="system"/>
+                                <state key="normal" image="bubble.left" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="28"/>
+                                </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPE-jb-aaM">
-                                <rect key="frame" x="125.33333333333333" y="730" width="20.666666666666671" height="22"/>
+                                <rect key="frame" x="105" y="718.66666666666663" width="34" height="33.333333333333371"/>
                                 <color key="tintColor" red="1" green="0.58039215690000001" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="heart" catalog="system"/>
+                                <state key="normal" image="heart" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="28"/>
+                                </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Livestream hexagon retro neutra artisan butcher  " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ud-if-klh">
                                 <rect key="frame" x="16" y="462" width="343" height="48"/>
@@ -40,31 +44,53 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15,238 viewers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhG-YQ-VwQ">
-                                <rect key="frame" x="16" y="518" width="97" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 viewer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhG-YQ-VwQ">
+                                <rect key="frame" x="16" y="519" width="53" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.60426476883561642" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8bs-At-GNk">
+                                <rect key="frame" x="16" y="544" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.72549019609999998" green="0.3921568627" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="VNK-7r-zUJ"/>
+                                    <constraint firstAttribute="height" constant="40" id="ZmG-oG-Ko1"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fgf-Pj-ar6">
-                                <rect key="frame" x="229" y="730" width="19" height="22"/>
+                                <rect key="frame" x="236" y="718" width="31" height="35"/>
                                 <color key="tintColor" red="1" green="0.58039215690000001" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="square.and.arrow.up" catalog="system"/>
+                                <state key="normal" image="square.and.arrow.up" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="28"/>
+                                </state>
                                 <connections>
                                     <segue destination="PRn-zT-w7A" kind="presentation" id="90B-KH-Ar3"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delightful Internet Origami" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3o-JL-cHL">
+                                <rect key="frame" x="64" y="544" width="201" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.99215686274509807" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="u3o-JL-cHL" secondAttribute="bottom" constant="228" id="5c8-ha-1WF"/>
                             <constraint firstItem="bPE-jb-aaM" firstAttribute="firstBaseline" secondItem="IGW-N5-zvC" secondAttribute="firstBaseline" id="72m-B7-mUw"/>
+                            <constraint firstItem="u3o-JL-cHL" firstAttribute="leading" secondItem="8bs-At-GNk" secondAttribute="trailing" constant="8" symbolic="YES" id="7Kl-de-FDe"/>
+                            <constraint firstItem="u3o-JL-cHL" firstAttribute="top" secondItem="8bs-At-GNk" secondAttribute="top" id="CvH-31-kuv"/>
                             <constraint firstItem="cVU-3J-KpJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="NkY-uZ-pej"/>
                             <constraint firstItem="cVU-3J-KpJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="OL4-PD-PAF"/>
+                            <constraint firstItem="zhG-YQ-VwQ" firstAttribute="leading" secondItem="1ud-if-klh" secondAttribute="leading" id="UCF-xQ-e9c"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IGW-N5-zvC" secondAttribute="bottom" constant="26" id="WEG-eC-kSd"/>
                             <constraint firstItem="IGW-N5-zvC" firstAttribute="leading" secondItem="bPE-jb-aaM" secondAttribute="trailing" constant="30" id="Wf7-JP-PGE"/>
+                            <constraint firstItem="u3o-JL-cHL" firstAttribute="bottom" secondItem="8bs-At-GNk" secondAttribute="bottom" id="bfx-iU-hdc"/>
                             <constraint firstItem="IGW-N5-zvC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dqf-Yl-aOK"/>
+                            <constraint firstItem="8bs-At-GNk" firstAttribute="leading" secondItem="zhG-YQ-VwQ" secondAttribute="leading" id="eBX-p1-dFY"/>
+                            <constraint firstItem="8bs-At-GNk" firstAttribute="top" secondItem="zhG-YQ-VwQ" secondAttribute="bottom" constant="8" symbolic="YES" id="g17-vt-lcO"/>
                             <constraint firstItem="1ud-if-klh" firstAttribute="top" secondItem="cVU-3J-KpJ" secondAttribute="bottom" constant="8" symbolic="YES" id="iFm-nB-4sc"/>
                             <constraint firstItem="1ud-if-klh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="rqz-YG-w26"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1ud-if-klh" secondAttribute="trailing" constant="16" id="uTc-G7-W9F"/>
@@ -80,7 +106,7 @@
             </objects>
             <point key="canvasLocation" x="140" y="46.551724137931039"/>
         </scene>
-        <!--Create Clip-->
+        <!--Create a Clip-->
         <scene sceneID="ex4-Id-Esr">
             <objects>
                 <viewController id="goX-FZ-xfE" customClass="CreateClipViewController" customModule="Clippi" customModuleProvider="target" sceneMemberID="viewController">
@@ -124,7 +150,7 @@
                             <constraint firstItem="H82-eZ-dIa" firstAttribute="centerX" secondItem="Zpa-vR-orC" secondAttribute="centerX" id="ttC-1h-Zq7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Create Clip" id="kMU-ot-1o3">
+                    <navigationItem key="navigationItem" title="Create a Clip" id="kMU-ot-1o3">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="0Om-0H-DQj"/>
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="uaw-V9-Dt2">
                             <color key="tintColor" red="0.97647058823529409" green="0.4392156862745098" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
