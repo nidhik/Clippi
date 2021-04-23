@@ -55,16 +55,17 @@ class APIClient {
         onPreview previewHandler: @escaping ((_: String) -> Void),
         onSuccess successHandler: @escaping ((_: APIGetClipSuccessResponse) -> Void),
         onFailure failureHandler: @escaping ((_: APIRequest.ErrorResponse?, _: Error) -> Void)) {
+        _ = self.pollForClip(assetId: assetId, duration: 2.0, onSuccess: successHandler, onFailure: failureHandler)
         
-        APIClipRequest(assetId: assetId, startTime: startTime, endTime: endTime)
-            .dispatch(
-                onSuccess: { (successResponse) in
-                    NSLog("\(successResponse.id)")
-                    previewHandler("https://image.mux.com/\(successResponse.playbackId)/thumbnail.png")
-                    _ = self.pollForClip(assetId: successResponse.id, duration: 2.0, onSuccess: successHandler, onFailure: failureHandler)
-                    
-            },
-            onFailure: failureHandler)
+//        APIClipRequest(assetId: assetId, startTime: startTime, endTime: endTime)
+//            .dispatch(
+//                onSuccess: { (successResponse) in
+//                    NSLog("\(successResponse.id)")
+//                    previewHandler("https://image.mux.com/\(successResponse.playbackId)/thumbnail.png")
+//                    _ = self.pollForClip(assetId: successResponse.id, duration: 2.0, onSuccess: successHandler, onFailure: failureHandler)
+//
+//            },
+//            onFailure: failureHandler)
     }
     
 }
